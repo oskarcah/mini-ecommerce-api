@@ -1,0 +1,442 @@
+{
+	"info": {
+		"_postman_id": "445ce9b1-d742-48b8-8160-4994ac59b212",
+		"name": "Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1013904"
+	},
+	"item": [
+		{
+			"name": "facturas",
+			"item": [
+				{
+					"name": "Crear factura",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fecha\": \"2023-03-25\",\n  \"documentoCliente\": \"123\",\n  \"detalleProductos\": [\n    {\n      \"codigoProducto\": \"P012\",\n      \"cantidad\": 2\n    },\n    {\n      \"codigoProducto\": \"P014\",\n      \"cantidad\": 3\n    },\n    {\n      \"codigoProducto\": \"P001\",\n      \"cantidad\": 5\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"facturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Factura por numero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Estatus Factura",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/facturas/1/estatus/PAGADA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"facturas",
+								"1",
+								"estatus",
+								"PAGADA"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "clientes",
+			"item": [
+				{
+					"name": "Lista de clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/clientes/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"clientes",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo Cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"numeroDocumento\": \"342\",\n  \"nombre\": \"pablo jimenez\",\n  \"direccion\": \"calle principal 01\",\n  \"numeroTelefono\": \"322000000\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"numeroDocumento\": \"123\",\n  \"nombre\": \"pedro gonzalez\",\n  \"direccion\": \"calle principal 00\",\n  \"numeroTelefono\": \"322000000\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"numeroDocumento\": \"123\",\n  \"nombre\": \"pedro gonzalez\",\n  \"direccion\": \"calle principal 00\",\n  \"numeroTelefono\": \"322000000\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/clientes/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"clientes",
+								"123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "productos",
+			"item": [
+				{
+					"name": "Lista de Productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/productos/P0001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"productos",
+								"P0001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo Producto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"codigo\": \"P0001\",\n  \"descripcion\": \"Pantalón negro caballero\",\n  \"precio\": 125.00,\n  \"disponible\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Producto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"codigo\": \"P0001\",\n  \"descripcion\": \"Pantalón negro sport caballero\",\n  \"precio\": 125.00,\n  \"disponible\": false\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Producto",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"codigo\": \"P0001\",\n  \"descripcion\": \"Pantalón negro sport caballero\",\n  \"precio\": 125.00,\n  \"disponible\": false\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/productos/P006",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"productos",
+								"P006"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activar producto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/productos/P001/activar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"productos",
+								"P001",
+								"activar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desactivar producto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ecommerce/productos/P001/desactivar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ecommerce",
+								"productos",
+								"P001",
+								"desactivar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
